@@ -6,6 +6,7 @@ Sidekiq is a simple, efficient message processing for Ruby that uses threads to 
 
 https://github.com/mperham/sidekiq
 
+
 ## Usage
 
 First ensure that you have Sidekiq working in your development environment by following the Sidekiq "Getting Started" guide:
@@ -49,6 +50,7 @@ By default, the recipe will install Sidekiq on to a utility instance with the na
 
 If you wish to have more than one sidekiq utility instance, you can name them `sidekiq_1`, `sidekiq_2`, etc, given the `utility_name` is set to `sidekiq`.
 
+
 ## Deploy Hooks
 
 You will need to add a deploy hook to restart Sidekiq during deploys. Add the following to `deploy/after_restart.rb`:
@@ -70,3 +72,4 @@ end
 More information regarding deploy hooks can be found here:
 
 https://engineyard.zendesk.com/entries/21016568-use-deploy-hooks
+
