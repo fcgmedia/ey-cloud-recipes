@@ -1,0 +1,9 @@
+<% @workers.times do |count| %>
+# processor worker <%= count %>
+check process processor_<%= @app_name %>_<%= count %>
+  with pidfile /var/run/engineyard/processor/<%= @app_name %>/processor_<%= count %>.pid
+  start program = "/engineyard/bin/processor <%= @app_name %> start <%= @rails_env %> <%= count %>" with timeout 90 seconds
+  stop program = "/engineyard/bin/processor <%= @app_name %> stop <%= @rails_env %> <%= count %>" with timeout 90 seconds
+  if totalmem is greater than <%= @memory_limit %> MB for 3 cycles then restart
+  group <%= @app_name %>_processor
+<% end %>
