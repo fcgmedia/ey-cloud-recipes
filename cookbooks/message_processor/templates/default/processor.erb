@@ -52,7 +52,7 @@ start ()
   fi
 
   # start processor
-  bin/bundle exec bin/processor -e "${rails_env}" -P "${pid_file}" -l "${log_file}" &
+  bin/bundle exec bin/processor -d -e "${rails_env}" -P "${pid_file}" -l "${log_file}" &
   exit $?
 }
 
