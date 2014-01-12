@@ -3,5 +3,5 @@
 # Recipe:: default
 #
 
-include_recipe "processor::cleanup"
-include_recipe "processor::setup"
+include_recipe "message_processor::cleanup"
+include_recipe "message_processor::setup"
