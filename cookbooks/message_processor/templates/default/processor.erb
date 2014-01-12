@@ -52,7 +52,7 @@ start ()
   fi
 
   # start processor
-  bin/processor -e "${rails_env}" -P "${pid_file}" -l "${log_file}" &
+  bin/bundle exec bin/processor -e "${rails_env}" -P "${pid_file}" -l "${log_file}" &
   exit $?
 }
 
@@ -60,7 +60,7 @@ start ()
 stop ()
 {
   # stop using processorctl
-  bin/processor -k -P "${pid_file}"
+  bin/bundle exec bin/processor -k -P "${pid_file}"
   exit $?
 }
 
