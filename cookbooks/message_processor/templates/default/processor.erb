@@ -21,7 +21,6 @@ worker_ref="processor_${worker_id}"
 pid_dir="/var/run/engineyard/processor/${app_name}"
 pid_file="${pid_dir}/${worker_ref}.pid"
 log_file="${app_root}/log/${worker_ref}.log"
-conf_file="/data/${app_name}/shared/config/${worker_ref}.yml"
 
 # add binstubs to $PATH
 export PATH="${app_root}/ey_bundler_binstubs:$PATH"
@@ -53,7 +52,7 @@ start ()
   fi
 
   # start processor
-  processor -C "${conf_file}" -e "${rails_env}" -r "${app_root}" -P "${pid_file}" -L "${log_file}" &
+  bin/processor -e "${rails_env}" -P "${pid_file}" -l "${log_file}" &
   exit $?
 }
 
@@ -61,14 +60,13 @@ start ()
 stop ()
 {
   # stop using processorctl
-  processorctl stop "${pid_file}"
+  bin/processor -k -P "${pid_file}"
   exit $?
 }
 
 # sanity checks
 [[ $# -ne 4 ]] && usage
 [[ ! -L $app_root ]] && { echo "${app_root} does not exist"; exit 1; }
-[[ ! -f $conf_file ]] && { echo "${conf_file} does not exist"; exit 1; }
 [[ ! -d $pid_dir ]] && mkdir -p "${pid_dir}"
 
 # execute action
