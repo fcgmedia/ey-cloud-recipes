@@ -17,6 +17,7 @@
 # include_recipe "ban"
 
 # uncomment to use the sidekiq recipe. See cookbooks/sidekiq/readme.md for documentation.
+include_recipe "rds"
 include_recipe "sidekiq"
 include_recipe "message_processor"
 

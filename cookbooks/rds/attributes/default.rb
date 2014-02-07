@@ -4,10 +4,10 @@
 #
 # for example:
 #
-#   default[:todo] = { 
-#     :adapter => 'mysql', 
-#     :database => 'todoproduction', 
-#     :username => 'engineyard', 
-#     :password => 'mypassword', 
-#     :host => 'todo.dhvg1ytl1sd8.us-east-1.rds.amazonaws.com' 
-#   }
+default[:rds] = {
+  :adapter => 'mysql',
+  :database => "ENV['RDS_MASTER_DB_NAME']",
+  :username => "ENV['RDS_MASTER_USERNAME']",
+  :password => "ENV['RDS_MASTER_PASSWORD",
+  :host => "ENV['RDS_MASTER_HOST']"
+}
