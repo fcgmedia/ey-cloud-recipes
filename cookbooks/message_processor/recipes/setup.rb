@@ -3,7 +3,7 @@
 # Recipe:: setup
 #
 
-if util_or_app_server?(node[:processor][:utility_name])
+if util?
   # report to dashboard
   ey_cloud_report "processor" do
     message "Setting up processor"

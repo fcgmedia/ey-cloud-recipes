@@ -8,7 +8,7 @@ default[:processor] = {
   # unless a utility name is set, in which case, processor will
   # only be installed on to a utility instance that matches
   # the name
-  :utility_name => 'processor',
+  :utility_name => 'houston',
   :workers => 2
 }
 

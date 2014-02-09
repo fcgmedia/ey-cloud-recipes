@@ -9,7 +9,7 @@ execute "reload-monit" do
   action :nothing
 end
 
-unless util_or_app_server?(node[:processor][:utility_name])
+unless util?
   # report to dashboard
   ey_cloud_report "processor" do
     message "Cleaning up processor (if needed)"
