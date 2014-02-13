@@ -17,10 +17,9 @@
 # include_recipe "ban"
 
 include_recipe "cronjobs"
-include_recipe "message_processor"
 include_recipe "rds"
-include_recipe "scout"
 include_recipe "sidekiq"
+include_recipe "message_processor"
 
 #uncomment to turn on memcached
 # include_recipe "memcached"
