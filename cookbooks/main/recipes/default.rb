@@ -17,6 +17,7 @@
 # include_recipe "ban"
 
 include_recipe "cronjobs"
+include_recipe "dotfiles"
 include_recipe "rds"
 include_recipe "sidekiq"
 include_recipe "message_processor"
