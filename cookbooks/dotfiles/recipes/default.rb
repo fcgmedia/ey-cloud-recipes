@@ -14,12 +14,12 @@ if ['solo', 'app', 'app_master', 'util'].include?(node[:instance_role])
     end
 
     template "/home/#{username}/.bashrc" do
-      source "irbrc.erb"
+      source "bashrc.erb"
       owner username
       group username
       mode 0744
       variables({
-          :app_name => app_name
+        :app_name => app_name
       })
     end
   end
