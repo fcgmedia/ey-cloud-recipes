@@ -4,7 +4,7 @@ export HISTSIZE=10000
 export EDITOR='vim'
 export PAGER=most
 alias ll='ls -l'
-alias goat='cd /data/<%= app_name %>/current'
+alias goat='cd /data/<%= @app_name %>/current'
 alias console='goat && ./bin/rails c'
 alias grep='grep --colour=auto'
 alias tie="tail -n 300 -f ./log/puma.log"
