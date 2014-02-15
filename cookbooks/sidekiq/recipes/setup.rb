@@ -3,8 +3,7 @@
 # Recipe:: setup
 #
 
-if true
-# if util?
+if util?
   # report to dashboard
   ey_cloud_report "sidekiq" do
     message "Setting up sidekiq"
