@@ -19,7 +19,9 @@ default[:sidekiq] = {
   # Queues
   :queues => {
     # :queue_name => priority
-    :high => 3,
+    :most_viewed => 3,
+    :email => 3,
+    :high => 6,
     :default => 2,
     :low => 1
   },
