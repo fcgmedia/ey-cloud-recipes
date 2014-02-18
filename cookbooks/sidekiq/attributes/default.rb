@@ -14,7 +14,7 @@ default[:sidekiq] = {
   :workers => node[:environment][:framework_env] == "production" ? 2 : 1,
 
   # Concurrency
-  :concurrency => node[:environment][:framework_env] == "production" ? 25 : 5,
+  :concurrency => node[:environment][:framework_env] == "production" ? 15 : 5,
 
   # Queues
   :queues => {
