@@ -11,7 +11,7 @@ default[:sidekiq] = {
   :utility_name => 'worker',
 
   # Number of workers (not threads)
-  :workers => node[:environment][:framework_env] == "production" ? 2 : 1,
+  :workers => 1,
 
   # Concurrency
   :concurrency => node[:environment][:framework_env] == "production" ? 15 : 5,
