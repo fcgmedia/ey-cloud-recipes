@@ -18,6 +18,7 @@
 
 include_recipe "cronjobs"
 include_recipe "dotfiles"
+include_recipe "nginx"
 include_recipe "rds"
 include_recipe "sidekiq"
 include_recipe "message_processor"
