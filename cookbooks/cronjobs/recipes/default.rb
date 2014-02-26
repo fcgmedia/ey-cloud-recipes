@@ -19,6 +19,12 @@ node[:applications].each do |app_name, _|
       user 'deploy'
       command "cd /data/#{app_name}/current && RAILS_ENV=#{node[:environment][:name]} bin/rake maintenance:remove_old_most_viewed --trace"
     end
+
+    cron "#{app_name}-sitemap-generator" do
+      hour '7'
+      minute '27'
+      user 'deploy'
+      command "cd /data/#{app_name}/current && RAILS_ENV=#{node[:environment][:name]} bin/bundle exec thor site:sitemap"
+    end
   end
 end
-
