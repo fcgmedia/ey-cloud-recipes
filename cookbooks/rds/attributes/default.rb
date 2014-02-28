@@ -6,8 +6,9 @@
 #
 default["atp"] = {
   :adapter => 'postgresql',
-  :database => "ENV['RDS_MASTER_DB_NAME']",
-  :username => "ENV['RDS_MASTER_USERNAME']",
-  :password => "ENV['RDS_MASTER_PASSWORD",
-  :host => "ENV['RDS_MASTER_HOST']"
+  :database => "<%= ENV['RDS_MASTER_DB_NAME'] %>",
+  :username => "<%= ENV['RDS_MASTER_USERNAME'] %>",
+  :password => "<%= ENV['RDS_MASTER_PASSWORD %>",
+  :pool => 5,
+  :host => "<%= ENV['RDS_MASTER_HOST'] %>"
 }

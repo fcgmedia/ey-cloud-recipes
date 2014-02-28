@@ -31,6 +31,7 @@ if ['solo', 'app_master', 'app', 'util'].include?(node[:instance_role])
         :database => attributes[:database],
         :username => attributes[:username],
         :password => attributes[:password],
+        :pool => attributes[:pool],
         :host => attributes[:host]
       })
     end
