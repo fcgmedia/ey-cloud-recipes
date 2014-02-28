@@ -5,6 +5,10 @@
 # Configure application servers to use an Amazon RDS database (or any external ActiveRecord-compatible database)
 # Note: This recipe does not make any changes to Engine Yard-provisioned databases
 
+enable_package 'virtual/mysql' do
+  version '5.6'
+end
+
 enable_package 'dev-db/percona-server' do
   version '5.6.14.62.0'
 end
