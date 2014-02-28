@@ -5,6 +5,15 @@
 # Configure application servers to use an Amazon RDS database (or any external ActiveRecord-compatible database)
 # Note: This recipe does not make any changes to Engine Yard-provisioned databases
 
+enable_package 'dev-db/percona-server' do
+  version '5.6.14.62.0'
+end
+
+package 'dev-db/percona-server' do
+  version '5.6.14.62.0'
+  action :install
+end
+
 if ['solo', 'app_master', 'app', 'util'].include?(node[:instance_role])
   # for each application
   node.engineyard.apps.each do |app|
