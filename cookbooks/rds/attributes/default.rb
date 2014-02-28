@@ -4,8 +4,8 @@
 #
 # for example:
 #
-default[:rds] = {
-  :adapter => 'mysql',
+default["atp"] = {
+  :adapter => 'postgresql',
   :database => "ENV['RDS_MASTER_DB_NAME']",
   :username => "ENV['RDS_MASTER_USERNAME']",
   :password => "ENV['RDS_MASTER_PASSWORD",
