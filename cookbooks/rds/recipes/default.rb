@@ -19,6 +19,10 @@ package 'dev-db/percona-server' do
   action :install
 end
 
+enable_package 'dev-python/python-exec' do
+  version '0.2'
+end
+
 enable_package 'dev-db/postgresql-base' do
   version '9.3.2'
 end
