@@ -14,6 +14,15 @@ package 'dev-db/percona-server' do
   action :install
 end
 
+enable_package 'dev-db/postgresql-server' do
+  version '9.3.2'
+end
+
+package 'dev-db/postgresql-server' do
+  version '9.3.2'
+  action :install
+end
+
 if ['solo', 'app_master', 'app', 'util'].include?(node[:instance_role])
   # for each application
   node.engineyard.apps.each do |app|
