@@ -7,6 +7,7 @@
 
 enable_package 'virtual/mysql' do
   version '5.6'
+  override_hardmask true
 end
 
 enable_package 'dev-db/percona-server' do
