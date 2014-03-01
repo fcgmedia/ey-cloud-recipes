@@ -36,6 +36,12 @@ package 'dev-db/postgresql-server' do
   action :install
 end
 
+bash "set postgresql as 9.3" do
+  user "root"
+  code "eselect postgresql set 9.3"
+  not_if { "which psql93" }
+end
+
 if ['solo', 'app_master', 'app', 'util'].include?(node[:instance_role])
   # for each application
   node.engineyard.apps.each do |app|
