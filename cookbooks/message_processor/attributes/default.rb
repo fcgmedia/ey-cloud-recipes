@@ -9,7 +9,7 @@ default[:processor] = {
   # only be installed on to a utility instance that matches
   # the name
   :utility_name => 'houston',
-  :workers => 2
+  :workers => 1
 }
 
 # Store processor node as attribute
