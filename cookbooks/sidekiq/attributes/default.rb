@@ -21,6 +21,7 @@ default[:sidekiq] = {
     # :queue_name => priority
     :most_viewed => 3,
     :email => 3,
+    :activities => 5,
     :high => 6,
     :default => 2,
     :low => 1
