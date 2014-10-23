@@ -16,12 +16,14 @@
 # uncomment to use the block recipe. See cookbooks/block/readme.md for documentation.
 # include_recipe "ban"
 
-include_recipe "cronjobs"
+#================API===================
+# include_recipe "cronjobs"
 include_recipe "dotfiles"
-include_recipe "nginx"
+# include_recipe "nginx"
 include_recipe "rds"
-include_recipe "sidekiq"
-include_recipe "message_processor"
+# include_recipe "sidekiq"
+# include_recipe "message_processor"
+#================API===================
 
 #uncomment to turn on memcached
 # include_recipe "memcached"
